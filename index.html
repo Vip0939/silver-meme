@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPDATE YOUR APP</title>
+    <title>Modern Apple-Style Page</title>
     <style>
         * {
             margin: 0;
@@ -27,7 +27,7 @@
             position: relative;
         }
         
-        .background {
+        .video-background {
             position: fixed;
             top: 0;
             left: 0;
@@ -53,7 +53,7 @@
         }
         
         h1 {
-            font-size: clamp(3rem, 8vw, 8rem);
+            font-size: clamp(2rem, 5vw, 5rem);
             font-weight: 700;
             margin-bottom: 2rem;
             background: linear-gradient(to right, #ff5f6d, #ffc371, #2196f3, #42a5f5);
@@ -117,17 +117,27 @@
                 width: 95%;
                 padding: 1.5rem;
             }
+            h1 {
+                font-size: clamp(1.5rem, 4vw, 3rem);
+            }
         }
     </style>
 </head>
 <body>
-    <img src="/api/placeholder/1920/1080" alt="Animated Background" class="background">
+    <video class="video-background" autoplay loop muted playsinline>
+        <source src="/api/placeholder/1920/1080" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="content">
         <h1>ACTION REQUIRED: UPDATE YOUR APP TO CONTINUE BROWSING AND FUCK MEDIAN.CO!!!</h1>
         <a href="https://sites.google.com/view/vip0938/apps/birdninjaapk" class="btn">Update NOW</a>
     </div>
     <script>
-        document.querySelector('.background').src = 'https://v.redd.it/m2t46hogc4me1/DASH_480.mp4';
+        // Set up video background source
+        const videoElement = document.querySelector('.video-background');
+        // Replace with your actual MP4 video URL
+        videoElement.querySelector('source').src = 'https://v.redd.it/m2t46hogc4me1/DASH_480.mp4';
+        videoElement.load(); // Important to reload the video after changing source
         
         // Adding a simple animation to enhance the experience
         document.addEventListener('DOMContentLoaded', () => {
